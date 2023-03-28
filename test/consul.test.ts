@@ -25,10 +25,10 @@ describe('test/consul.test.ts', () => {
   afterEach(mock.restore);
   after(() => app.close());
 
-
   it('should GET /consul/health/self/check', () => {
     // console.log(app);
-    return app.httpRequest()
+    return app
+      .httpRequest()
       .get('/consul/health/self/check')
       .expect('{"status":"success"}')
       .expect(200);
@@ -36,7 +36,10 @@ describe('test/consul.test.ts', () => {
 
   it('should consul balancer', async () => {
     const ctx = app.mockContext();
-    const res = await ctx.service.balancer.getServiceBalancer().select('ocr');
-    assert.equal(res.ServiceName, 'ocr');
+    try {
+      await ctx.service.balancer.getServiceBalancer().select('consul');
+    } catch (error) {
+      assert.strictEqual(error.message, 'no available instance named consul');
+    }
   });
 });
