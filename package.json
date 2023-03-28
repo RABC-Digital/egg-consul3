@@ -57,12 +57,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-consul3.git"
+    "url": "git+https://github.com/RABC-Digital/egg-consul3.git"
   },
   "bugs": {
-    "url": "https://github.com/eggjs/egg/issues"
+    "url": "https://github.com/RABC-Digital/egg-consul3/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-consul3#readme",
+  "homepage": "https://github.com/RABC-Digital/egg-consul3#readme",
   "author": "猫爪子",
   "license": "MIT"
 }

@@ -19,6 +19,14 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
 
+    services:
+      consul:
+        image: consul
+        env:
+          CONSUL_BIND_INTERFACE: eth0
+        ports:
+          - 8500:8500/tcp
+
     strategy:
       fail-fast: false
       matrix:
