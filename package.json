@@ -1,6 +1,6 @@
 {
   "name": "egg-consul3",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Consul plugin for Egg.js",
   "eggPlugin": {
     "name": "consul"

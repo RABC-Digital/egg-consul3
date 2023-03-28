@@ -13,20 +13,10 @@ describe('test/consul.test.ts', () => {
     return app.ready();
   });
 
-  beforeEach(async () => {
-    // init test datas
-    // try {
-    //   console.log(app.consul);
-    // } catch (err) {
-    //   console.log('init test datas error: %s', err);
-    // }
-  });
-
   afterEach(mock.restore);
   after(() => app.close());
 
   it('should GET /consul/health/self/check', () => {
-    // console.log(app);
     return app
       .httpRequest()
       .get('/consul/health/self/check')
