@@ -1,0 +1,16 @@
+{
+  "extends": "@eggjs/tsconfig",
+  "compilerOptions": {
+    "module": "Node16",
+    "ignoreDeprecations": "5.0",
+    "useUnknownInCatchVariables": false,
+    "target": "ES2022"
+  },
+  "include": [
+    "app",
+    "lib",
+    "config",
+    "app.ts",
+    "agent.ts"
+  ]
+}
