@@ -1,8 +1,11 @@
 import Consul from 'consul';
 import { IConsulProviderInfoOptions, IConsulRegisterInfoOptions } from './interface';
+import BanlancerService from './balancer';
 
 export class ConsulProvider {
   private readonly consul: Consul.Consul;
+
+  balancer: BanlancerService;
 
   constructor(providerOptions: IConsulProviderInfoOptions) {
     // should be, ignore config

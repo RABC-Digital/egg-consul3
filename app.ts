@@ -8,7 +8,7 @@ export default class AppBootHook implements IBoot {
   }
 
   configDidLoad() {
-    if (this.app.config.consul.provider) {
+    if (this.app.config.consul.client) {
       initPlugin(this.app);
     }
   }

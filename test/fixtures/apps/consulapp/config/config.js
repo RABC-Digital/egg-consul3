@@ -3,7 +3,7 @@
 exports.keys = 'plugin-consul';
 
 exports.consul = {
-  provider: {
+  client: {
     // 注册本服务
     register: true,
     // 应用正常下线反注册

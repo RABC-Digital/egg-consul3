@@ -78,6 +78,6 @@ export interface IConsulRegisterInfoOptions extends RegisterOptions {
 }
 
 export interface ConsulConfig {
-  provider: IConsulProviderInfoOptions;
+  client: IConsulProviderInfoOptions;
   service: IConsulRegisterInfoOptions;
 }

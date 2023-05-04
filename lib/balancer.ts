@@ -85,3 +85,15 @@ export class ConsulBalancer implements IConsulBalancer {
     throw new Error('invalid strategy balancer');
   }
 }
+
+export default class BanlancerService {
+  private consulBalancer: ConsulBalancer;
+
+  constructor(consul: Consul.Consul) {
+    this.consulBalancer = new ConsulBalancer(consul);
+  }
+
+  getServiceBalancer(strategy = 'random'): IServiceBalancer {
+    return this.consulBalancer.getServiceBalancer(strategy);
+  }
+}

@@ -6,11 +6,11 @@ import assert from 'node:assert';
 describe('test/consul.test.ts', () => {
   let app: MockApplication;
 
-  before(() => {
+  before(async () => {
     app = mock.app({
       baseDir: 'apps/consulapp',
     });
-    return app.ready();
+    return await app.ready();
   });
 
   afterEach(mock.restore);
@@ -25,9 +25,8 @@ describe('test/consul.test.ts', () => {
   });
 
   it('should consul balancer', async () => {
-    const ctx = app.mockContext();
     try {
-      await ctx.service.balancer.getServiceBalancer().select('consul');
+      await app.consul.balancer.getServiceBalancer().select('consul');
     } catch (error) {
       assert.strictEqual(error.message, 'no available instance named consul');
     }
